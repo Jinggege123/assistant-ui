@@ -4,6 +4,7 @@ export type {
   ReasoningMessagePart,
   SourceMessagePart,
   ImageMessagePart,
+  VideoMessagePart,
   FileMessagePart,
   DataMessagePart,
   Unstable_AudioMessagePart,

@@ -21,6 +21,8 @@ import type {
 import type { ToolResponseLike } from "../tool/ToolResponse";
 import { promiseWithResolvers } from "../../utils/promiseWithResolvers";
 
+type VideoPartInput = Extract<PartInit, { type: "video" }>;
+
 type ToolCallPartInit = {
   toolCallId?: string;
   toolName: string;
@@ -34,6 +36,7 @@ export type AssistantStreamController = {
   appendReasoning(reasoningDelta: string): void;
   appendSource(options: SourcePart): void;
   appendFile(options: FilePart): void;
+  appendVideo(options: Omit<VideoPartInput, "type">): void;
   appendData(options: DataPart): void;
   addTextPart(): TextStreamController;
   addToolCallPart(options: string): ToolCallStreamController;
@@ -193,6 +196,13 @@ class AssistantStreamControllerImpl implements AssistantStreamController {
   appendFile(options: FilePart) {
     this._addPart(
       this._withParentIdOption(options),
+      this._finishedPartStream(),
+    );
+  }
+
+  appendVideo(options: Omit<VideoPartInput, "type">) {
+    this._addPart(
+      this._withParentIdOption({ type: "video", ...options }),
       this._finishedPartStream(),
     );
   }
