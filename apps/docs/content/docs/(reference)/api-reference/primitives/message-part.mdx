@@ -1,6 +1,6 @@
 ---
 title: MessagePartPrimitive
-description: Primitives for text, images, tool calls, and other message content.
+description: Primitives for text, images, videos, tool calls, and other message content.
 ---
 
 import {
@@ -11,7 +11,7 @@ import {
 } from "@/generated/typeDocs";
 
 Each message can have any number of message parts.
-Message parts are usually one of text, reasoning, audio, tool-call, or data.
+Message parts are usually one of text, reasoning, image, video, audio, tool-call, or data.
 
 ## Message part Types
 
@@ -26,6 +26,10 @@ Exposes the assistant's reasoning process, showing how it arrived at its respons
 ### Audio
 
 Audio content that can be played back.
+
+### Video
+
+Video content that can be played back from a URL.
 
 ### Tool Call
 
@@ -93,6 +97,17 @@ import { MarkdownTextPrimitive } from "@assistant-ui/react-markdown";
 ### Audio
 
 Coming soon.
+
+### Video
+
+Renders the current video message part as a `<video>` element with controls and
+metadata preload.
+
+```tsx
+import { MessagePartPrimitive } from "@assistant-ui/react";
+
+<MessagePartPrimitive.Video className="max-w-sm rounded-xl" />;
+```
 
 ### InProgress
 
