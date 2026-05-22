@@ -1,5 +1,19 @@
 # @assistant-ui/react
 
+## 0.14.8
+
+### Patch Changes
+
+- [#4085](https://github.com/assistant-ui/assistant-ui/pull/4085) [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154) - chore: update dependencies ([@Yonom](https://github.com/Yonom))
+
+- Updated dependencies [[`e4634a5`](https://github.com/assistant-ui/assistant-ui/commit/e4634a59b7a926d158e929d559326f243efe438b), [`01244a5`](https://github.com/assistant-ui/assistant-ui/commit/01244a56026ee92bd4e49cb985136f9eb6d45154)]:
+  - @assistant-ui/core@0.2.5
+  - assistant-stream@0.3.16
+  - assistant-cloud@0.1.29
+  - safe-content-frame@0.0.20
+  - @assistant-ui/store@0.2.12
+  - @assistant-ui/tap@0.5.12
+
 ## 0.14.7
 
 ### Patch Changes
